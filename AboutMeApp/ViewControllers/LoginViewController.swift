@@ -12,15 +12,16 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let user = "1"
-    private let password = "1"
+    private let user = ""
+    private let password = ""
     
-    
+    private let userData = User.getUserData()
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tabBarVC = segue.destination as? UITabBarController
         tabBarVC?.viewControllers?.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userName = user
+                welcomeVC.userName = userData.userName
             }
         }
     }
@@ -31,7 +32,7 @@ final class LoginViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == user, passwordTextField.text == password else {
+        guard userNameTextField.text == userData.userName, passwordTextField.text == userData.password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password") {

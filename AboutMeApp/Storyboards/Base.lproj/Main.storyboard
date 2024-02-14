@@ -140,9 +140,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbw-sx-hMn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bJf-kF-Fdv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="756.33802816901414"/>
+            <point key="canvasLocation" x="2681" y="756"/>
         </scene>
-        <!--Bio View Controller-->
+        <!--Bio-->
         <scene sceneID="L6m-ic-UOQ">
             <objects>
                 <viewController id="rO2-Cy-Kju" customClass="BioViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,11 +152,11 @@
                         <viewLayoutGuide key="safeArea" id="ZSM-XP-mWE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Oex-al-K4x"/>
+                    <navigationItem key="navigationItem" title="Bio" id="Oex-al-K4x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VQ-YU-EhF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="1466"/>
+            <point key="canvasLocation" x="1864" y="1520"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KQl-uJ-cSX">
@@ -178,39 +178,44 @@
             </objects>
             <point key="canvasLocation" x="1014.375" y="-38.028169014084504"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Name-->
         <scene sceneID="TJy-ym-abv">
             <objects>
                 <viewController id="piD-tp-LrJ" customClass="InfoViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l3t-Zh-srN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T39-cQ-yPU">
+                                <rect key="frame" x="96" y="112.5" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T39-cQ-yPU" secondAttribute="height" multiplier="1:1" id="yZ0-lp-Q2j"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="d7L-s9-iKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T39-cQ-yPU" firstAttribute="top" secondItem="d7L-s9-iKI" secondAttribute="top" constant="20" id="NUy-vj-xHB"/>
+                            <constraint firstItem="d7L-s9-iKI" firstAttribute="trailing" secondItem="T39-cQ-yPU" secondAttribute="trailing" constant="96" id="Tef-Hw-ePa"/>
+                            <constraint firstItem="T39-cQ-yPU" firstAttribute="centerX" secondItem="l3t-Zh-srN" secondAttribute="centerX" id="a1Y-UO-Mhw"/>
+                            <constraint firstItem="T39-cQ-yPU" firstAttribute="leading" secondItem="d7L-s9-iKI" secondAttribute="leading" constant="96" id="azP-5b-GQg"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4cS-SF-h8B"/>
+                    <navigationItem key="navigationItem" title="Name" id="4cS-SF-h8B">
+                        <barButtonItem key="rightBarButtonItem" title="Bio" id="9Zk-Cp-J3S">
+                            <connections>
+                                <segue destination="rO2-Cy-Kju" kind="show" id="7tY-bK-vZS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="avatarPhotoImageView" destination="T39-cQ-yPU" id="m5P-jA-IOW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErT-XV-gzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="756.33802816901414"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KAq-R7-lds">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WiM-hV-A34" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZpY-Zy-cx5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="rO2-Cy-Kju" kind="relationship" relationship="rootViewController" id="foz-Eo-23m"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="neT-PE-ryU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1014" y="1465"/>
+            <point key="canvasLocation" x="1863.75" y="755.28169014084506"/>
         </scene>
         <!--Amaya-->
         <scene sceneID="cPl-Ip-cCR">
@@ -218,8 +223,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1TP-PK-fT8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Amaya" image="person.crop.circle.fill" catalog="system" id="3dl-1h-ugQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PG7-gy-lxm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PG7-gy-lxm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

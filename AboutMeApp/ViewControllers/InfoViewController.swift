@@ -9,6 +9,10 @@ import UIKit
 
 final class InfoViewController: UIViewController {
 
+    @IBOutlet var avatarPhotoImageView: UIImageView!
+    
+    private let personalInfo = Person.getPersonalInfo()
+    
     private let primaryColor = UIColor(
         red: 100/255,
         green: 150/255,
@@ -25,5 +29,6 @@ final class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        avatarPhotoImageView.layer.cornerRadius = avatarPhotoImageView.frame.width / 2
     }
 }
