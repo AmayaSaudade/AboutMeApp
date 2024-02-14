@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="1864" y="1520"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="KQl-uJ-cSX">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dg6-sI-Yr6" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dg6-sI-Yr6" customClass="TabBarViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UCu-wr-NdE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ByS-BF-74E">
@@ -316,7 +316,7 @@
         <!--Amaya-->
         <scene sceneID="cPl-Ip-cCR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1TP-PK-fT8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1TP-PK-fT8" customClass="NavigationViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Amaya" image="person.crop.circle.fill" catalog="system" id="3dl-1h-ugQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PG7-gy-lxm">

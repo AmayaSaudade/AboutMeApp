@@ -38,10 +38,13 @@ final class InfoViewController: UIViewController {
         alpha: 1
     )
     
+    override func viewWillLayoutSubviews() {
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
         setProfileInfo()
     }
     

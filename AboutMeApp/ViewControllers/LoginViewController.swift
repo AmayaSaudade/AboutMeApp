@@ -16,23 +16,29 @@ final class LoginViewController: UIViewController {
     private let password = ""
     
     private let userData = User.getUserData()
+    private let personData = User.getPersonData()
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarVC = segue.destination as? UITabBarController
+        let tabBarVC = segue.destination as? TabBarViewController
+        
         tabBarVC?.viewControllers?.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.userName = userData.userName
-                welcomeVC.nickName = userData.nickName
-            } else if let infoVC = viewController as? InfoViewController {
-                infoVC.name = userData.name
-                infoVC.nickName = userData.nickName
-                infoVC.currentLocation = userData.currentLocation
-                infoVC.department = userData.department
-                infoVC.posiiton = userData.position
-                infoVC.bio = userData.bioInfo
-            } else if let bioVC = viewController as? BioViewController {
-                bioVC.info = userData.bioInfo
-            }
+                welcomeVC.nickName = personData.nickName
+            } else if let navigationVC = viewController as? NavigationViewController {
+                navigationVC.viewControllers.forEach { viewController in
+                    if let infoVC = viewController as? InfoViewController {
+                        infoVC.name = personData.name
+                        infoVC.nickName = personData.nickName
+                        infoVC.currentLocation = personData.currentLocation
+                        infoVC.department = personData.department
+                        infoVC.posiiton = personData.position
+//                        if let bioVC = viewController as? BioViewController {
+//                            bioVC.info = personData.bioInfo
+//                        }
+                    }
+                }
+            } 
         }
     }
     

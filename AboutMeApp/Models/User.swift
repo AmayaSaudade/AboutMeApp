@@ -21,6 +21,19 @@ struct User {
         User(
             userName: "1",
             password: "1",
+            nickName: "",
+            name: "",
+            currentLocation: "",
+            department: "",
+            position: "",
+            bioInfo: ""
+            
+        )
+        }
+    static func getPersonData() -> User {
+        User(
+            userName: "1",
+            password: "1",
             nickName: "Amaya",
             name: "Darina Kirilenko",
             currentLocation: "Arkhangelsk",
