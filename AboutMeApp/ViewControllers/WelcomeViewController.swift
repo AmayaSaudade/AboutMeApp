@@ -12,24 +12,25 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     
     var userName: String!
+    var nickName: String!
     
     private let primaryColor = UIColor(
-        red: 100/255,
-        green: 150/255,
-        blue: 200/255,
+        red: 173/255,
+        green: 216/255,
+        blue: 230/255,
         alpha: 1
     )
     private let secondaryColor = UIColor(
-        red: 200/255,
-        green: 120/255,
-        blue: 100/255,
+        red: 216/255,
+        green: 191/255,
+        blue: 216/255,
         alpha: 1
     )
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        welcomeLabel.text = "Welcome, \(userName ?? "")!"
+        welcomeLabel.text = "Welcome, \(userName ?? "")!\n My name is \(nickName ?? "")."
     }
 }
 

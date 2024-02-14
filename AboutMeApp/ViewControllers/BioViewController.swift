@@ -8,18 +8,20 @@
 import UIKit
 
 final class BioViewController: UIViewController {
+    
+    var info: String!
 
     
     private let primaryColor = UIColor(
-        red: 100/255,
-        green: 150/255,
-        blue: 200/255,
+        red: 200/255,
+        green: 230/255,
+        blue: 230/255,
         alpha: 1
     )
     private let secondaryColor = UIColor(
-        red: 200/255,
-        green: 120/255,
-        blue: 100/255,
+        red: 216/255,
+        green: 191/255,
+        blue: 216/255,
         alpha: 1
     )
     

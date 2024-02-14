@@ -22,6 +22,16 @@ final class LoginViewController: UIViewController {
         tabBarVC?.viewControllers?.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.userName = userData.userName
+                welcomeVC.nickName = userData.nickName
+            } else if let infoVC = viewController as? InfoViewController {
+                infoVC.name = userData.name
+                infoVC.nickName = userData.nickName
+                infoVC.currentLocation = userData.currentLocation
+                infoVC.department = userData.department
+                infoVC.posiiton = userData.position
+                infoVC.bio = userData.bioInfo
+            } else if let bioVC = viewController as? BioViewController {
+                bioVC.info = userData.bioInfo
             }
         }
     }
@@ -31,8 +41,13 @@ final class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == userData.userName, passwordTextField.text == userData.password else {
+    override func shouldPerformSegue(
+        withIdentifier identifier: String,
+        sender: Any?
+    ) -> Bool {
+        guard userNameTextField.text == userData.userName, 
+              passwordTextField.text == userData.password
+        else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password") {
@@ -56,8 +71,16 @@ final class LoginViewController: UIViewController {
                         andMessage: "Your password is \(password)")
     }
     
-    private func showAlert(withTitle title: String, andMessage message: String, completion: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    private func showAlert(
+        withTitle title: String,
+        andMessage message: String,
+        completion: (() -> Void)? = nil
+    ) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             completion?()
         }
